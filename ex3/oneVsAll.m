@@ -22,14 +22,14 @@ initial_theta = zeros(n + 1, 1);
 options = optimset('GradObj', 'on', 'MaxIter', 10);
 
 
-i=1
+i=1;
 while(i<=num_labels) 
   theta= fmincg (@(t)(lrCostFunction(t, X, (y == i), lambda)), initial_theta, options);
 
-  alltheta(i,:)=theta;
-  i=i+1
+  all_theta(i,:)=theta';
+  i=i+1;
 endwhile
-alltheta
+
 % ====================== YOUR CODE HERE ======================
 % Instructions: You should complete the following code to train num_labels
 %               logistic regression classifiers with regularization

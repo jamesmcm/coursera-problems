@@ -30,9 +30,14 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
+i=1
+while (i<=m)
+  [x, ix]=max(X(i,:)*all_theta');
+  p(i)=ix;
+  i=i+1;
+endwhile
 
-
-p=sigmoid(sum((all_theta.*X)')');
+%p=sigmoid(sum((all_theta.*X)')');
 
 
 

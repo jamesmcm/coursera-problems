@@ -7,6 +7,9 @@ function p = predict(Theta1, Theta2, X)
 m = size(X, 1);
 num_labels = size(Theta2, 1);
 
+Theta1
+Theta2
+X
 % You need to return the following variables correctly 
 p = zeros(size(X, 1), 1);
 

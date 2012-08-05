@@ -7,9 +7,11 @@ function p = predict(Theta1, Theta2, X)
 m = size(X, 1);
 num_labels = size(Theta2, 1);
 
-Theta1
-Theta2
-X
+X = [ones(m, 1) X];
+
+
+
+
 % You need to return the following variables correctly 
 p = zeros(size(X, 1), 1);
 
@@ -26,6 +28,21 @@ p = zeros(size(X, 1), 1);
 
 
 
+
+work=X*Theta1';
+%columns are activation values, rows are different data sets
+work=sigmoid(work);
+work = [ones(m, 1) work];
+%work
+%Add bias
+
+work=work*Theta2';
+work=sigmoid(work);
+
+[maximum,ind]=max(work,[],2);
+
+%ind(ind==10)=0;
+p=ind;
 
 
 
